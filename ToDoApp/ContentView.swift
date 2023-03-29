@@ -22,17 +22,17 @@ struct TodoList: View {
                 .font(.largeTitle)
                 .fontWeight(.bold)
                 .padding(.top, 50)
-                .foregroundColor(Color.red.opacity(0.7))
+                .foregroundColor(Color.teal)
             
             HStack{
                 TextField("New task", text: $newTask)
                     .padding(.all)
-                    .background(Color.pink.opacity(0.4))
+                    .background(Color.blue.opacity(0.4))
                     .cornerRadius(25)
-                    .accentColor(.red)
+                    .accentColor(.teal)
                 Button(action: addTask){
                     Text("Add")
-                        .foregroundColor(Color.red.opacity(0.7))
+                        .foregroundColor(Color.blue.opacity(0.7))
                 }
             }
             .padding()
@@ -41,11 +41,12 @@ struct TodoList: View {
                 List(items) { item in
                     HStack{
                         Text(item.task)
-                            .foregroundColor(Color.red)
+                            .foregroundColor(Color.teal
+                            )
                         Spacer()
                         Button(action: {removeTask(item) }) {
                             Image(systemName: "trash")
-                                .foregroundColor(.red)
+                                .foregroundColor(.blue)
                         }
                         
                     }
@@ -54,7 +55,7 @@ struct TodoList: View {
             
         }
         
-        .background(Color.red.opacity(0.3))
+        .background(Color.teal.opacity(0.3))
     }
     
     func addTask(){
